@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import MainContents from "./content";
+import SearchContext from "./SearchContext";
+import TopNavigation from "./navigation/topNavigation";
+import { useState } from "react";
+import FooterAudio from "./containers/footerAudio";
 
 function App() {
+  const [searchResults, setSearchResults] = useState([]);
+  const [music, setMusic] = useState({});
+  const [artistAbout, setArtistAbout] = useState(null);
+  const [thumbnail, setThumbnail] = useState("");
+  const [source, setSrc] = useState(
+    "https://cdns-preview-5.dzcdn.net/stream/c-5b6f0c0073709ad9fff872a07110aaea-3.mp3"
+  );
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SearchContext.Provider
+      value={{
+        searchResults,
+        setSearchResults,
+        music,
+        setMusic,
+        artistAbout,
+        setArtistAbout,
+        thumbnail,
+        setThumbnail,
+        source,
+        setSrc,
+      }}
+    >
+      <TopNavigation />
+      <MainContents />
+      <FooterAudio />
+    </SearchContext.Provider>
   );
 }
 
