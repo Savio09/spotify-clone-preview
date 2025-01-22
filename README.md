@@ -1,70 +1,156 @@
-# Getting Started with Create React App
+# Spotify Preview Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+Spotify Preview Clone is a web application that allows users to search for music, view artist information, and listen to short previews of tracks. The application is built using React for the frontend and Express.js for the backend, with integration to third-party APIs for fetching music data.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Search Functionality**: Users can search for music tracks and artists.
+- **Music Preview**: Listen to short previews of tracks directly within the application.
+- **Artist Information**: View detailed information about artists, including a summary and images.
+- **Responsive Design**: The application is designed to be responsive and works well on both desktop and mobile devices.
+- **Interactive UI**: The application features a modern and interactive user interface with smooth transitions and animations.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Inspiration
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The inspiration for this project came from the desire to create a simplified version of Spotify that focuses on providing quick previews of music tracks. The goal was to build an application that is easy to use and provides essential features for music discovery.
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend
 
-### `npm run build`
+- **React**: A JavaScript library for building user interfaces.
+- **React Context API**: For state management across the application.
+- **CSS**: For styling the application.
+- **Create React App**: For bootstrapping the React application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Express.js**: A web application framework for Node.js.
+- **Axios**: For making HTTP requests to third-party APIs.
+- **dotenv**: For managing environment variables.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### APIs
 
-### `npm run eject`
+- **OpenAI API**: For generating artist summaries.
+- **Deezer API**: For fetching music previews.
+- **Shazam API**: For searching music tracks and fetching autocomplete suggestions.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+client/
+  ├── build/
+  ├── public/
+  ├── src/
+  │   ├── containers/
+  │   ├── images/
+  │   ├── navigation/
+  │   ├── App.css
+  │   ├── App.js
+  │   ├── content.js
+  │   ├── ExpansionContext.js
+  │   ├── index.css
+  │   ├── index.js
+  │   ├── SearchContext.js
+  ├── .gitignore
+  ├── package.json
+  ├── README.md
+server/
+  ├── .env
+  ├── app.js
+  ├── package.json
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Prerequisites
 
-## Learn More
+- Node.js
+- npm (Node Package Manager)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone the repository:
 
-### Code Splitting
+```sh
+git clone https://github.com/your-username/spotify-preview-clone.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Navigate to the
 
-### Analyzing the Bundle Size
+client
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+directory and install dependencies:
 
-### Making a Progressive Web App
+```sh
+cd client
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. Navigate to the
 
-### Advanced Configuration
+server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+directory and install dependencies:
 
-### Deployment
+```sh
+cd ../server
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+4. Create a
 
-### `npm run build` fails to minify
+.env
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+file in the
+
+server
+
+directory and add your API keys:
+
+```
+API_KEY=your_openai_api_key
+RAPIDAPI_KEY_SHAZAM=your_shazam_api_key
+RAPIDAPI_KEY_DEEZER=your_deezer_api_key
+PORT=5000
+```
+
+### Running the Application
+
+1. Start the backend server:
+
+```sh
+cd server
+npm start
+```
+
+2. Start the frontend development server:
+
+```sh
+cd ../client
+npm start
+```
+
+3. Open your browser and navigate to `http://localhost:3000`.
+
+## Potential Next Steps
+
+- **User Authentication**: Implement user authentication to allow users to save their favorite tracks and playlists.
+- **Full Track Playback**: Integrate with a music streaming service to allow full track playback.
+- **Enhanced Search**: Improve the search functionality to include more filters and sorting options.
+- **Playlist Creation**: Allow users to create and manage their own playlists.
+- **Social Features**: Add social features such as sharing tracks and following other users.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a pull request or open an issue if you have any suggestions or improvements.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+---
+
+Thank you for using Spotify Preview Clone! We hope you enjoy discovering new music with our application.
