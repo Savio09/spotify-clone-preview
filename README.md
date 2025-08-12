@@ -1,6 +1,6 @@
 # Spotify Preview Clone
 
-## Overview
+## Overview of the application
 
 Spotify Preview Clone is a web application that allows users to search for music, view artist information, and listen to short previews of tracks. The application is built using React for the frontend and Express.js for the backend, with integration to third-party APIs for fetching music data.
 
